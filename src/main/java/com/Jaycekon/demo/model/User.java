@@ -1,17 +1,13 @@
 package com.Jaycekon.demo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 /**
  * Created by weijie_huang on 2017/9/7.
  */
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)

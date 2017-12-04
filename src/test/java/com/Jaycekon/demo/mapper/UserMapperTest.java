@@ -21,7 +21,7 @@ public class UserMapperTest {
 
     @Test
     public void testInset() {
-        User user = new User("Jaycekon","1234","1234","123");
+        User user = new User("Jaycekon","1234","1234","123","");
         int i = mapper.insert(user);
         Assert.assertNotEquals(0, i);
     }
