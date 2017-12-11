@@ -1,7 +1,9 @@
-package com.Jaycekon.demo.service;
+package com.jaycekon.service;
 
-import com.Jaycekon.demo.util.FetchUtils;
-import com.Jaycekon.demo.model.HttpRequestData;
+import com.jaycekon.model.BaseSession;
+import com.jaycekon.util.FetchUtils;
+import com.jaycekon.model.HttpRequestData;
+import com.jaycekon.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,16 +16,20 @@ public class TaoBaoCrawler {
     private static Logger logger = LoggerFactory.getLogger(TaoBaoCrawler.class);
 
     public static void main(String[] args) {
-        HttpRequestData data = HttpRequestData.creatHttpRequestData();
-        TaoBaoCrawler.crawlIndex(data);
+        BaseSession session = BaseSession.create();
+        session.setAccount("xiangshui");
+        TaoBaoCrawler.crawlIndex(session);
     }
 
 
-    public static void crawlIndex(HttpRequestData data) {
-
+    public static void crawlIndex(BaseSession session) {
+        HttpRequestData data =session.getHttpRequestData();
         try {
             String home = FetchUtils.get(data, "https://just4u.taobao.com/shop/view_shop.htm?spm=a230r.1.14.184.218cda2bVndmmJ&user_number_id=402991741");
             logger.info(home);
+
+            Util.saveFile(session,"xiangshui_home","xiangshui",home);
+
 
         } catch (Exception e) {
             logger.error("获取店铺首页异常！{}", e.getMessage(), e);

@@ -1,4 +1,4 @@
-package com.Jaycekon.demo.util;
+package com.jaycekon.util;
 
 /*******************************************
  * SecurityUtil.java

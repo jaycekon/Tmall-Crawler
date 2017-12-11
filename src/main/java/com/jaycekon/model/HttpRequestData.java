@@ -1,4 +1,4 @@
-package com.Jaycekon.demo.model;
+package com.jaycekon.model;
 
 import org.apache.commons.httpclient.Cookie;
 import org.apache.commons.httpclient.HttpClient;

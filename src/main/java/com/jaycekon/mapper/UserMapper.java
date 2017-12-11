@@ -1,7 +1,7 @@
-package com.Jaycekon.demo.mapper;
+package com.jaycekon.mapper;
 
-import com.Jaycekon.demo.model.User;
-import com.Jaycekon.demo.util.MyMapper;
+import com.jaycekon.model.User;
+import com.jaycekon.util.MyMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

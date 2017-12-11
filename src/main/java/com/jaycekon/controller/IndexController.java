@@ -1,4 +1,4 @@
-package com.Jaycekon.demo.controller;
+package com.jaycekon.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

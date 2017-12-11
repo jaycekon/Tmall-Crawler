@@ -1,4 +1,4 @@
-package com.Jaycekon.demo.util;
+package com.jaycekon.util;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;

@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package com.Jaycekon.demo.model;
+package com.jaycekon.model;
 
 import javax.persistence.*;
 import java.io.Serializable;

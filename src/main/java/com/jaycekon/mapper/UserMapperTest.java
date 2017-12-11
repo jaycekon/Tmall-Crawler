@@ -1,6 +1,6 @@
-package com.Jaycekon.demo.mapper;
+package com.jaycekon.mapper;
 
-import com.Jaycekon.demo.model.User;
+import com.jaycekon.model.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

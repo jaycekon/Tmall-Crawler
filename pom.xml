@@ -133,11 +133,30 @@
             <version>2.5</version>
         </dependency>
 
-        <!--云打码-->
+        <!--&lt;!&ndash;云打码&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>com.cqz</groupId>-->
+            <!--<artifactId>cqz</artifactId>-->
+            <!--<version>1.2.3</version>-->
+        <!--</dependency>-->
+
         <dependency>
-            <groupId>com.cqz</groupId>
-            <artifactId>cqz</artifactId>
-            <version>1.2.3</version>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.8.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>RELEASE</version>
         </dependency>
     </dependencies>
 

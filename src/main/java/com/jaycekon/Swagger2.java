@@ -1,4 +1,4 @@
-package com.Jaycekon.demo;
+package com.jaycekon;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

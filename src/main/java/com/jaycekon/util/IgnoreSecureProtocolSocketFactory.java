@@ -1,4 +1,4 @@
-package com.Jaycekon.demo.util;
+package com.jaycekon.util;
 
 import org.apache.commons.httpclient.params.HttpConnectionParams;
 import org.apache.commons.httpclient.protocol.SecureProtocolSocketFactory;

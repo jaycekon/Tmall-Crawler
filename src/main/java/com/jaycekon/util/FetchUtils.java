@@ -1,6 +1,6 @@
-package com.Jaycekon.demo.util;
+package com.jaycekon.util;
 
-import com.Jaycekon.demo.model.HttpRequestData;
+import com.jaycekon.model.HttpRequestData;
 import org.apache.commons.httpclient.*;
 import org.apache.commons.httpclient.methods.*;
 import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;

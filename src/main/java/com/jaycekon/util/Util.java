@@ -1,7 +1,6 @@
-package com.Jaycekon.demo.util;
+package com.jaycekon.util;
 
-import com.Jaycekon.demo.model.BaseSession;
-import com.cqz.dm.HttpDama;
+import com.jaycekon.model.BaseSession;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -10,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.UUID;
 
 
 public class Util {
@@ -75,25 +73,25 @@ public class Util {
         return "";
     }
 
-
-    /**
-     * 众联打码接口
-     *
-     * @param imgBytes
-     * @return 验证码
-     */
-    public static String recognizeVerifyCode(byte[] imgBytes) {
-        String result = "";
-        try {
-            String fileName = UUID.randomUUID().toString().replace("-", "") + ".jpg";
-            result = HttpDama.manualVerify(imgBytes, fileName);
-            logger.info("打码上传返回结果：{}", result);
-        } catch (Exception e) {
-            logger.error("打码失败" + e.getMessage(), e);
-        }
-
-        return result;
-    }
+//
+//    /**
+//     * 众联打码接口
+//     *
+//     * @param imgBytes
+//     * @return 验证码
+//     */
+//    public static String recognizeVerifyCode(byte[] imgBytes) {
+//        String result = "";
+//        try {
+//            String fileName = UUID.randomUUID().toString().replace("-", "") + ".jpg";
+//            result = HttpDama.manualVerify(imgBytes, fileName);
+//            logger.info("打码上传返回结果：{}", result);
+//        } catch (Exception e) {
+//            logger.error("打码失败" + e.getMessage(), e);
+//        }
+//
+//        return result;
+//    }
 
     public static boolean isPhoneNum(String value) {
         boolean result = true;

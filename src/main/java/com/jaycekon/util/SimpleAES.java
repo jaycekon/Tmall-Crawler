@@ -1,4 +1,4 @@
-package com.Jaycekon.demo.util;
+package com.jaycekon.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

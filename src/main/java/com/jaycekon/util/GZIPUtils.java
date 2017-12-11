@@ -1,4 +1,4 @@
-package com.Jaycekon.demo.util;
+package com.jaycekon.util;
 
 import org.apache.commons.codec.binary.StringUtils;
 import org.slf4j.Logger;

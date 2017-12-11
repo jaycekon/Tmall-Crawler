@@ -1,4 +1,4 @@
-package com.Jaycekon.demo;
+package com.jaycekon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

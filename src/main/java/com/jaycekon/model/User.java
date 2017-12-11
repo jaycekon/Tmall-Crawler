@@ -1,4 +1,4 @@
-package com.Jaycekon.demo.model;
+package com.jaycekon.model;
 
 import lombok.*;
 import lombok.experimental.Accessors;

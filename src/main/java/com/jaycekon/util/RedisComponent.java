@@ -1,4 +1,4 @@
-package com.Jaycekon.demo.util;
+package com.jaycekon.util;
 
 import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
