@@ -17,6 +17,19 @@ public class BaseSession implements Serializable {
     private String password;
     private String verifyCode;
 
+    //Wechat 变量
+    private String code;
+    private String uuid;
+    private String redirectUrl;
+
+    private String skey;
+    private String sid;
+    private String uin;
+    private String passTicket;
+
+    private String synckey;
+
+
     private String html;
     private String platform;
     private String token;
@@ -142,4 +155,71 @@ public class BaseSession implements Serializable {
         getUser().setPassword(password);
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+
+    public String getRedirectUrl() {
+        return redirectUrl;
+    }
+
+    public void setRedirectUrl(String redirectUrl) {
+        this.redirectUrl = redirectUrl;
+    }
+
+
+    public String getSkey() {
+        return skey;
+    }
+
+    public void setSkey(String skey) {
+        this.skey = skey;
+    }
+
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
+    public String getUin() {
+        return uin;
+    }
+
+    public void setUin(String uin) {
+        this.uin = uin;
+    }
+
+    public String getPassTicket() {
+        return passTicket;
+    }
+
+    public void setPassTicket(String passTicket) {
+        this.passTicket = passTicket;
+    }
+
+
+    public String getSynckey() {
+        return synckey;
+    }
+
+    public void setSynckey(String synckey) {
+        this.synckey = synckey;
+    }
 }

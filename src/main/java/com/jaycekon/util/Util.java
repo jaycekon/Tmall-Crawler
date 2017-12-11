@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class Util {
@@ -270,5 +272,22 @@ public class Util {
             }
         }
         return mac.toString();
+    }
+
+
+    /**
+     * 正则匹配
+     *
+     * @param p
+     * @param str
+     * @return
+     */
+    public static String match(String p, String str) {
+        Pattern pattern = Pattern.compile(p);
+        Matcher m = pattern.matcher(str);
+        if (m.find()) {
+            return m.group(1);
+        }
+        return null;
     }
 }
