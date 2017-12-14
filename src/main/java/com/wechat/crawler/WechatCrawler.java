@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.URLEncoder;
 import java.util.*;
 
 /**
@@ -205,8 +206,34 @@ public class WechatCrawler {
     public void crawlLoan(BaseSession session) {
         HttpRequestData data = session.getHttpRequestData();
         try {
-            String result = FetchUtils.get(data, "https://pay.weixin.qq.com/webank/webankqueryaccount?channelid=259");
+            data.setHeaders("Host", "pay.weixin.qq.com");
+            data.setHeaders("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 MicroMessenger/6.5.2.501 NetType/WIFI WindowsWechat QBCore/3.43.691.400 QQBrowser/9.0.2524.400");
+
+            String url = "https://wx2.qq.com/cgi-bin/mmwebwx-bin/webwxcheckurl?requrl=https%3A%2F%2Fopen.weixin.qq.com%2Fconnect%2Foauth2%2Fauthorize%3Fappid%3Dwx57849631bb367f52%26redirect_uri%3Dhttps%253A%252F%252Fpay.weixin.qq.com%252Fwebank%252Fwebankqueryaccount%253Fcc%253D1%2526channelid%253D1004%2526pass_ticket%253DEew%252BtGLkMF3GRloLMtSMwwiO%252Fe4CF0Wtd0vc%252B7YmYyI%253D%26response_type%3Dcode%26scope%3Dsnsapi_base%26state%3D123%23wechat_redirect&skey=" + URLEncoder.encode(session.getSkey(), "utf-8") + "&deviceid=e227855143313418&pass_ticket=" + session.getPassTicket() + "&opcode=2&scene=1&username=@03a2aa17f6028b8034caafdb8f9bc33552004108c9359924b47e2aa4103e2f49";
+            String result = FetchUtils.get(data, url);
             logger.info(result);
+            Util.saveFile(session, "wld_crawl_result", "wld", result);
+
+            Map<String, String> map = new HashMap<>();
+            map.put("channelid", "1004");
+            map.put("outputtype", "json");
+            map.put("overdue_unpay", "0");
+            map.put("pay_date", "20180109");
+            map.put("wxpay", "Y");
+
+            String baseResult = FetchUtils.post(data, "https://pay.weixin.qq.com/webank/webankqueryloanbydate", map);
+            Util.saveFile(session, "wld_crawl_baseResult", "wld", baseResult);
+
+            map.clear();
+            map.put("channelid", "1004");
+            map.put("loan_receipt_nbr", "20211708160756079369");
+            map.put("outputtype", "json");
+            map.put("wxpay", "Y");
+            String loanResult = FetchUtils.post(data, "https://pay.weixin.qq.com/webank/webankqueryloandetail", map);
+            String content = new String(loanResult.getBytes("ISO8859-1"), "utf-8");
+            Util.saveFile(session, "wld_crawl_loanResult", "wld", loanResult);
+
+
         } catch (Exception e) {
             logger.error("获取微粒贷信息异常！{}", e.getMessage(), e);
         }

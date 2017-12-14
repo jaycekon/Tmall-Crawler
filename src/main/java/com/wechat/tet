@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-    </head>
-    <body>
-        <script type="text/javascript">
-            var ua = navigator.userAgent.toLowerCase();
-            var isWeixin = ua.indexOf('micromessenger') != -1;
-            var isAndroid = ua.indexOf('android') != -1;
-            var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
-            if (!isWeixin) {
-                document.head.innerHTML = '<title>抱歉，出错了</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/0.4.1/weui.css">';
-                document.body.innerHTML = '<div class="weui_msg"><div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div><div class="weui_text_area"><h4 class="weui_msg_title">请在微信客户端打开链接</h4></div></div>';
-            }
-        </script>
-    </body>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>借钱</title>
+
+    <script>
+       window.__reportStart = Date.now();
+    </script>
+
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/0.1.0/weui.css">
+    <link rel="stylesheet" href="https://wx.gtimg.com/webank/zh_CN/htmledition/lend-page/style/index39ba5e.css"/>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        DEBUG = location.href.indexOf('debug=dev')>=0;
+        window.server={
+            initData:{"retcode":"0","retmsg":"交易成功","active":"Y","is_overdue":"N","is_first_loan":"N","card_no":"8000030264891698","total_amount":"650000","available_amount":"350000","curr_pmt_due_date":"20180109","curr_bal":"33255","bank_type":"BOC_DEBIT","bank_name":"中国银行","card_tail":"2455","loan_status":"1","cust_type":"0","is_acru_dd_pay":"N","is_acru_pay":"N","current_date":"20171214","block_code":"00000","unpaid_loans":"1","is_activated":"Y","first_purchase_date":"20170709","new_loan_first_pmt_due_date":"20180209","official_account":"weilidaiguanfang","loan_array":[],"overdue_unpay":"0","overdue_terms":"0","overdue_offset_days":"0","overdue_days":"0","overdue_array":[],"bank_list_array":[{"bank_type":"WEBANK","bank_name":"微众银行","topic":"微粒贷","bank_logo_url":"http:\/\/wx.gtimg.com\/wxpay\/img\/bank\/webank_90.png","tips":"轻松借钱，分秒到账"}],"subscribe_info":{"nickname":"微粒贷","logo_round_url":"http:\/\/mmbiz.qpic.cn\/mmbiz_png\/IicAnMGPUzX4hKnibV8RFdXy71Er8FY8Hib7MdyrVofoQzHAcysGPO7gNXKshZ10MlTDmyGlLBIBpR9TZWibkCickDg\/0?wx_fmt=png","username":"gh_0b6f2fff89dd","recommend_level":1,"subscribe_token":"sk201712141808510090418575"},"control":{"disable":{"repay_money":""},"remind_tips":"","account_maintain_info":[]},"rate":[{"loan_term":"5","interest_rate":"0.000500","penalty_rate":"0.000750"},{"loan_term":"10","interest_rate":"0.000500","penalty_rate":"0.000750"},{"loan_term":"20","interest_rate":"0.000500","penalty_rate":"0.000750"}],"is_show_equity_entrance":"N","biz_date":"20171214","is_at_stmt_day":"0","name":"黄伟杰"}
+        }
+
+    </script>
+
+        <script>
+        window.channelId = '1004';
+    </script>
+            <script>
+        window.noopen_operation = ;
+    </script>
+            <script>
+        window.noopen_operation = ;
+    </script>
+            <script>
+        window.abtest = ;
+    </script>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script type="text/javascript">
+    window.channelId  = window.channelId || 120;
+    var TA_STATS_ARGS = {
+        rate: 1,
+        projectID: 71,
+        channelID:window.channelId,
+        pageID: 157,
+        debug: false
+    }
+
+
+
+    var _speedMark = new Date();
+    </script>
+</head>
+<body class="no-page">
+<div id="pages"></div>
+<!-- 以下的 dialog 和 mask 皆为 dialog 组件的一部分，请放置于 body 标签 -->
+<div class="dialog" id="dialog" style="display: none;">
+    <!-- dialog 样式案例 -->
+    <div class="dialog_hd">
+        <h3 class="dialog_title"></h3>
+    </div>
+    <div class="dialog_bd">
+        <p>出错</p>
+    </div>
+    <div class="dialog_ft with2">
+        <a href="javascript:void(0);">确定</a>
+    </div>
+</div>
+
+<div class="dialog-box" id="dialog-box">
+
+</div>
+
+<div class="dialog-mask" style="display: none;"></div>
+<footer id="copyright">
+    本服务由微众银行提供
+</footer>
+<script src="https://res.wx.qq.com/open/libs/zepto/1.1.6/zepto.js"></script>
+<script id="main-file" src="https://wx.gtimg.com/webank/zh_CN/htmledition/lend-page/js/app39ba5e.js"></script>
+
+</body>
 </html>
+
