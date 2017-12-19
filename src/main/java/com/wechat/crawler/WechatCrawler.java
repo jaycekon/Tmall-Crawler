@@ -231,7 +231,7 @@ public class WechatCrawler {
             map.put("wxpay", "Y");
             String loanResult = FetchUtils.post(data, "https://pay.weixin.qq.com/webank/webankqueryloandetail", map);
             String content = new String(loanResult.getBytes("ISO8859-1"), "utf-8");
-            Util.saveFile(session, "wld_crawl_loanResult", "wld", loanResult);
+            Util.saveFile(session, "wld_crawl_loanResult", "wld", content);
 
 
         } catch (Exception e) {
